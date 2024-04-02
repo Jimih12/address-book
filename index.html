@@ -3,26 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Address Book</title>
 </head>
-<body>
-    <h1>Address Book</h1>
-    <ul>
-        <li>
-            <div>
-                <h2>Jimih Setiawan</h2>
-                <p>+62-8123467890</p>
-                <p>jimih@gmail.com</p>
+<body onload="readAll()">
+    <div class="container">
+        <div class="form_container">
+            <form class="create_form">
+                <input type="text" class="name" placeholder="Enter name"/>
+                <input type="email" class="email" placeholder="Enter Email"/>
+                <input type="phone" class="phone" placeholder="Enter Phone"/>
+                <button type="button" onclick="add()">Create</button>            
+            </form>
+            <form class="update_form">
+                <input type="text" hidden class="id"/>
+                <input type="text" class="uname"/>
+                <input type="email" class="uemail"/>
+                <input type="phone" class="uphone"/>
+                <button type="button" onclick="update()">Update</button>            
+            </form>
+            <div class="add_div">
+                <button onclick="create()">Add +</button>
             </div>
-        </li>
-        <li>
-            <div>
-                <h2>Luqman</h2>
-                <p>+62-8123467890</p>
-                <p>luqmanh@gmail.com</p>
-            </div>
-        </li>
-    </ul> 
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>phone</th>
+                    <th>Action</th>
+                </thead>
+                <tbody class="data_table">
+                </tbody>
+            </table>
+        </div>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
